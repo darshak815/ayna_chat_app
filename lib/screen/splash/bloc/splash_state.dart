@@ -1,13 +1,13 @@
 enum SplashStatus { initial, login, home }
 
 class SplashState {
-  const SplashState({this.status = SplashStatus.initial, this.isLoggedIn = false});
+  const SplashState({this.status = SplashStatus.initial});
 
   final SplashStatus status;
-  final bool isLoggedIn;
 
-  copyWith({SplashStatus? status, bool? isLoggedIn}) {
-    status = status ?? this.status;
-    isLoggedIn = isLoggedIn ?? this.isLoggedIn;
+  SplashState copyWith({SplashStatus? status}) {
+    return SplashState(
+      status: status ?? this.status,
+    );
   }
 }
